@@ -1,5 +1,6 @@
 git.exe config --global alias.cm '!git checkout master && git merge --ff-only' 
 git.exe config --global alias.last 'log -1 HEAD'
 git.exe config --global alias.lol 'log --oneline --decorate --graph'
+git.exe config --global alias.stage 'add'
 git.exe config --global alias.unstage 'reset HEAD --'
 git.exe config --global alias.visual '!C:/Portab~1/GitExtensions/GitExtensions'
