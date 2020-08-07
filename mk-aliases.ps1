@@ -6,6 +6,5 @@ git.exe config --global alias.rf 'checkout HEAD^1 --'
 git.exe config --global alias.stage 'add'
 git.exe config --global alias.unstage 'reset HEAD --'
 
-$encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("& D:/Users/`$Env:USERNAME/AppData/Local/Fork/Fork `$PWD"))
-git.exe config --global alias.visual "!powershell.exe -NoProfile -EncodedCommand $encodedCommand"
+$encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("& $Env:USERPROFILE/AppData/Local/Fork/Fork `$PWD"))
 git.exe config --global alias.visual "!powershell.exe -NoProfile -EncodedCommand $encodedCommand"
