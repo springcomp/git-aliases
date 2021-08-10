@@ -6,7 +6,7 @@ git.exe config --global alias.lol 'log --oneline --decorate --graph'
 git.exe config --global alias.pristine '!git reset --hard && git clean -dffx'
 git.exe config --global alias.undo 'checkout HEAD^1 --'
 git.exe config --global alias.stage 'add'
-git.exe config --global alias.unstage 'reset --soft HEAD --'
+git.exe config --global alias.unstage 'restore --staged'
 git.exe config --global alias.uncommit 'reset --soft HEAD^'
 
 $encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("& `$Env:LOCALAPPDATA/Fork/Fork `$PWD"))
