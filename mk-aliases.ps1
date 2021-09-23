@@ -14,4 +14,4 @@ git.exe config --global alias.visual "!powershell.exe -NoProfile -EncodedCommand
 
 $gb = Get-Content -Path "$($PSScriptRoot)/git-browse.ps1" -Raw
 $encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("$($gb); BrowseTo-GitRepository -remote (git remote get-url --push origin)"))
-git.exe config --global alias.devops "!powershell.exe -NoProfile -EncodedCommand $encodedCommand"
+git.exe config --global alias.browse "!powershell.exe -NoProfile -EncodedCommand $encodedCommand"
