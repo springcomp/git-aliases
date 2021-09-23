@@ -11,3 +11,6 @@ git.exe config --global alias.uncommit 'reset --soft HEAD^'
 
 $encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("& `$Env:LOCALAPPDATA/Fork/Fork `$PWD"))
 git.exe config --global alias.visual "!powershell.exe -NoProfile -EncodedCommand $encodedCommand"
+
+$encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("start (git remote get-url --push origin).Replace(`"lpl-sources@`", `"`")"))
+git.exe config --global alias.devops "!powershell.exe -NoProfile -EncodedCommand $encodedCommand"
