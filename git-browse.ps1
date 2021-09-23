@@ -6,7 +6,7 @@ Function BrowseTo-GitRepository {
 	$matchings = @{
 		"github-ssh"=@("^git@github.com:(?<user>.+)\/(?<git>.*)\.git$", "https://github.com/%user%/%git%")
 		"github-https"=@("^https://github.com/(?<user>.+)/(?<git>.*)$", "https://github.com/%user%/%git%")
-		"azure-devops"=@("https://[^@]+@dev.azure.com/(?<tenant>.+)/(?<project>.+)/(?<git>.*)$", "https://dev.azure.com/%tenant%/%project%/_git/%git%")
+		"azure-devops"=@("https://[^@]+@dev.azure.com/(?<tenant>.+)/(?<project>.+)/_git/(?<git>.*)$", "https://dev.azure.com/%tenant%/%project%/_git/%git%")
 	}
 
 	$matchings.Keys |% {
