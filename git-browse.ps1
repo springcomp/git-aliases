@@ -1,10 +1,18 @@
 Function BrowseTo-GitRepository {
 	[CmdletBinding()]
 	[Alias("origin")]
-	param([string]$remote)
+	param(
+        [string]$remote = $(git config --get remote.origin.url)
+    )
+
+    if (!$remote) {
+        Write-Output "No Git URL found"
+        break
+    }
+
 
 	$matchings = @{
-		"github-ssh"=@("^git@github.com:(?<user>.+)\/(?<git>.*)\.git$", "https://github.com/%user%/%git%")
+		"github-ssh"=@("^git@(ssh\.)?github.com:(?<user>.+)\/(?<git>.*)\.git$", "https://github.com/%user%/%git%")
 		"github-https"=@("^https://github.com/(?<user>.+)/(?<git>.*)$", "https://github.com/%user%/%git%")
 		"azure-devops"=@("https://[^@]+@dev.azure.com/(?<tenant>.+)/(?<project>.+)/_git/(?<git>.*)$", "https://dev.azure.com/%tenant%/%project%/_git/%git%")
 	}
