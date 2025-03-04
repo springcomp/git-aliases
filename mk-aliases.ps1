@@ -9,7 +9,7 @@ git.exe config --global alias.stage 'add'
 git.exe config --global alias.unstage 'restore --staged'
 git.exe config --global alias.uncommit 'reset --soft HEAD^'
 
-$encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("& `$Env:LOCALAPPDATA/Fork/Fork `$PWD"))
+$encodedCommand = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes("& `$Env:LOCALAPPDATA/Fork/current/fork `$PWD"))
 git.exe config --global alias.visual "!powershell.exe -NoProfile -EncodedCommand $encodedCommand"
 
 $gb = Get-Content -Path "$($PSScriptRoot)/git-browse.ps1" -Raw
