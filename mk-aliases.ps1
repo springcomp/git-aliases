@@ -3,7 +3,7 @@ git.exe config --global alias.cmn '!git fetch --all -p && git checkout main && g
 git.exe config --global alias.istage '!git-istage'
 git.exe config --global alias.last 'log -1 HEAD'
 git.exe config --global alias.lol 'log --oneline --decorate --graph'
-git.exe config --global alias.pristine '!git reset --hard && git clean -dffx'
+git.exe config --global alias.pristine '!git reset --hard && git clean -dffx -e .jj'
 git.exe config --global alias.undo 'checkout HEAD^1 --'
 git.exe config --global alias.stage 'add'
 git.exe config --global alias.unstage 'restore --staged'
